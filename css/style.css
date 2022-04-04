@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+
+/*  GLOBALE */
+
+:root {
+    --color0: #fff;
+    --color1: yellow;
+    --color2: #000;
+    --color3: #eee;
+    --color4: #f00;
+    --nuance: #060606fa;
+    --font_title: 'Kaushan Script';
+    --font1: 'Jost';
+    --font_body: 'Noto Sans';
+}
+
+* {
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color0);
+}
+
+input,
+textarea {
+    color: var(--color0);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+hr {
+    border-color: #3a3a3a;
+}
+
+.btn {
+    position: relative;
+    border: 1px solid var(--color1);
+    color: var(--color1);
+    transition: all .3s linear;
+    padding: 10px 15px;
+    top: 10%;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: var(--color1);
+    color: var(--color2);
+    padding: 10px 25px;
+}
+
+body {
+    color: var(--color0);
+    background: var(--color2);
+    font-family: var(--font_body);
+}
+
+h1 {
+    font-family: var(--font_title);
+    color: var(--color1);
+}
+
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    background: white;
+    transition: all 2s linear 3s;
+}
+
+.preloader img {}
+
+main section .title h1 {
+    font-size: 2rem;
+}
+
+main section .title p {
+    font-family: var(--font1);
+    letter-spacing: 1px;
+}
+
+section#header {
+    display: flex;
+    max-height: 100vh;
+}
+
+header label,
+header input {
+    display: none;
+}
+
+.swiper1 {
+    width: 50vw;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+    background: #1212124f;
+}
+
+.home h1 {
+    font-size: 5rem;
+    padding: 20px 0;
+    color: var(--color1);
+}
+
+ul.menu.flex {
+    display: flex;
+}
+
+ul.menu.flex li {
+    list-style: none;
+}
+
+ul.menu.flex li a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--color1);
+    font-size: 14px;
+    padding: 10px;
+    transition: all .3s linear;
+    cursor: pointer;
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+ul.menu.flex li a:hover {
+    color: var(--color2);
+    background: var(--color1);
+}
+
+nav.fixed ul.menu.flex li a:hover {
+    color: var(--color1);
+    background: var(--color2);
+}
+
+nav.fixed ul.menu.flex li a {
+    color: var(--color2);
+}
+
+nav.fixed label {
+    color: var(--color2);
+}
+
+.home {
+    padding: 10%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.home:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../assets/banner/4.png);
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotateY(180deg);
+}
+
+.home p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 0 30% 0 0;
+}
+
+.banner {
+    background: url(./assets/banner/1.png);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+.banner .rs {
+    position: fixed;
+    left: 0;
+    display: flex;
+    top: 50%;
+    justify-content: space-between;
+    height: 30vh;
+    padding: 10px;
+    z-index: 1;
+    flex-direction: column;
+    transform: translateY(-50%);
+}
+
+.banner .rs i {
+    cursor: pointer;
+    background: var(--color2);
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color1);
+    transition: all .3s linear;
+    border: 1px solid var(--color1);
+    margin: 0px;
+}
+
+.banner .rs i:hover {
+    color: var(--color2);
+    background: var(--color1);
+}
+
+.banner img {
+    width: 100%;
+    padding: 20%;
+    z-index: 0;
+    filter: drop-shadow(2px 4px 6px #ff15);
+}
+
+nav.flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20% 0 10%;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    transition: all .3s linear;
+    position: fixed;
+    width: 100%;
+}
+
+nav.fixed {
+    padding: 0% 5%;
+    background-color: var(--color1);
+}
+
+.logo img {
+    width: 70px;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+main section .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+    justify-content: center;
+    position: relative;
+    padding: 2% 20% 4%;
+    text-align: center;
+}
+
+
+/* main section .title::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 100px;
+    background-color: var(--color1);
+} */
+
+main section .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main section .bloc-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 170px;
+    min-height: 300px;
+    margin: 30px 10px;
+    max-width: 400px;
+}
+
+main section#chefs .bloc-item {
+    max-width: 300px;
+}
+
+main section#stunning .bloc-item {
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+}
+
+main section .bloc-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all .3s linear;
+}
+
+main section .bloc-item img:hover {
+    opacity: .5;
+}
+
+main section#testimonials {
+    background: url(../assets/gallerie/food/9.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #0e0e0e;
+    background-blend-mode: soft-light;
+}
+
+main section#testimonials .bloc-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+}
+
+main section#testimonials .bloc-item {
+    background: #00000099;
+    height: 400px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 16px;
+    padding: 2%;
+}
+
+main section .bloc-item h2 {
+    padding: 10% 0;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    padding-left: 42px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    white-space: nowrap;
+}
+
+main section .bloc-item h2:before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color: var(--color4);
+    top: 50%;
+    left: 0%;
+}
+
+main section#resto {
+    background-image: url(../assets/banner/resto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #0e0e0e;
+    background-blend-mode: soft-light;
+    background-attachment: fixed;
+}
+
+.global-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.global-menu h2 {
+    display: block;
+    padding: 10px 0;
+    color: #505050;
+}
+
+.global-menu h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-family: cursive;
+}
+
+.global-menu h3 p {
+    font-size: 15px;
+}
+
+main section#menus {
+    background: #000000;
+    padding: 0 5% 5% 5%;
+}
+
+main section#menus .container {
+    background: #3a3a3a14;
+}
+
+main section#menus .item-menu {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin: 10px;
+    padding: 10px 0;
+}
+
+main section#menus .item-menu img {
+    width: 50px;
+    height: auto;
+    /* border-radius: 50%; */
+    object-fit: contain;
+    object-position: top;
+}
+
+main section#menus .item-menu .menu-info {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+textarea#msg {
+    width: 100%;
+    padding: 2% 2% 10% 2%;
+}
+
+.bottom {
+    margin: 10px 0;
+}
+
+input {
+    padding: 20px;
+    background: #0c0c0ca8;
+    border: 1px solid transparent;
+    color: #fff;
+    width: 49%;
+}
+
+textarea#msg {
+    background: #14141285;
+    border: none;
+}
+
+span.price {
+    white-space: nowrap;
+}
+
+main section#contact {
+    background: url(../assets/gallerie/food/11.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #0e0e0e;
+    background-blend-mode: soft-light;
+}
+
+main section#contact .container {
+    width: 100%;
+}
+
+main section#contact .container div {
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit {
+    width: max-content;
+}
+
+footer {
+    text-align: center;
+    padding: 1%;
+    font-size: 16px;
+    letter-spacing: 4px;
+    background-color: var(--color1);
+    color: var(--color2);
+}
+
+footer span {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .home p {
+        padding: 0;
+    }
+    .banner .rs {
+        right: 0%;
+        left: auto;
+    }
+    .home:before {
+        display: none;
+    }
+    header label {
+        display: block;
+        font-size: 30px;
+        color: var(--color1);
+    }
+    ul.menu.flex {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        background: yellow;
+        right: 0;
+        top: 0;
+        padding: 10% 2%;
+        height: 100vh;
+        margin: 0;
+        width: 200px;
+        right: -200px;
+        transition: all .3s linear;
+    }
+    ul.menu.flex li a {
+        color: var(--color2);
+    }
+    ul.menu.flex li {
+        margin: 10px;
+        position: relative;
+    }
+    ul.menu.flex li::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: url(../assets/rigt.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #header>header>nav>label:nth-child(2) {
+        z-index: 9;
+        color: #000;
+        z-index: 9;
+        color: #ff0;
+        background: #303000;
+        right: 0;
+        position: absolute;
+        top: 0;
+        padding: 10px;
+        width: 200px;
+        font-size: 25px;
+        right: -200px;
+        transition: all .3s linear;
+    }
+    ul.menu.flex.reveal,
+    #header>header>nav>label:nth-child(2).reveal {
+        right: 0px;
+        transition: all .3s linear;
+    }
+    main section#stunning .bloc-item {
+        width: 170px;
+        min-height: 200px;
+        height: auto;
+    }
+    main section .bloc-item h2 {
+        font-size: 10px;
+    }
+    main section#testimonials .bloc-item {
+        width: 230px;
+        margin: 5px;
+    }
+    main section#testimonials {
+        padding: 5% 0;
+    }
+    .menu-info {
+        padding-left: 10px;
+    }
+    .menu-info p {
+        font-size: 10px;
+    }
+    form {
+        width: 70%;
+    }
+    nav.flex {
+        padding: 0% 10%;
+    }
+}
+
+@media screen and (max-width: 576px) {}
